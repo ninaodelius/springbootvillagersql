@@ -25,7 +25,6 @@ public class VillagerDAOHibernateImpl implements VillagerDAO{
     }
 
     @Override
-    @Transactional
     public List<Villager> findAll() {
 
         //get the current hibernate session
@@ -43,5 +42,43 @@ public class VillagerDAOHibernateImpl implements VillagerDAO{
         //return the results
 
         return villagers;
+    }
+
+    @Override
+    public Villager findById(int theId) {
+        // get the current hibernate session
+        Session currentSession = entityManager.unwrap(Session.class);
+        //get the villager
+        Villager theVillager =
+                currentSession.get(Villager.class, theId);
+        //return the villager
+
+        return theVillager;
+    }
+
+    @Override
+    public void save(Villager theVillager) {
+
+        //get the current hibernate session
+        Session currentSession = entityManager.unwrap(Session.class);
+        //save employee
+        currentSession.saveOrUpdate(theVillager);
+
+    }
+
+    @Override
+    public void deleteById(int theId) {
+
+        //get the current hibernate sessino
+        Session currentSession = entityManager.unwrap(Session.class);
+
+        //delete object with primary key
+        Query theQuery =
+                currentSession.createQuery(
+                        "delete from Villager where id=:villagerId"
+                );
+        theQuery.setParameter("villagerId", theId);
+
+        theQuery.executeUpdate();
     }
 }

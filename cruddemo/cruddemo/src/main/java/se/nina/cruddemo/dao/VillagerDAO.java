@@ -8,5 +8,12 @@ public interface VillagerDAO {
 
     public List<Villager> findAll();
 
+    public Villager findById(int theId);
+
+    public void save(Villager theVillager);
+
+    public void deleteById(int theId);
+
+
 
 }
