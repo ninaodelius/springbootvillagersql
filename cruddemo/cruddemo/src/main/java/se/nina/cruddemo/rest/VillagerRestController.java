@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import se.nina.cruddemo.dao.VillagerDAO;
 import se.nina.cruddemo.entity.Villager;
+import se.nina.cruddemo.service.VillagerService;
 
 import java.util.List;
 
@@ -14,19 +15,19 @@ import java.util.List;
 @RequestMapping("/api")
 public class VillagerRestController {
 
-    private VillagerDAO villagerDAO;
+    private VillagerService villagerService;
 
     //inject villager dao , use constructor injection
     @Autowired
-    public VillagerRestController(VillagerDAO theVillagerDAO) {
-        villagerDAO = theVillagerDAO;
+    public VillagerRestController(VillagerService theVillagerService) {
+        villagerService = theVillagerService;
     }
 
     // expose "/villagers" and return list of villagers
 
     @GetMapping("/villagers")
     public List<Villager> findAll() {
-        return villagerDAO.findAll();
+        return villagerService.findAll();
     }
 
 }
