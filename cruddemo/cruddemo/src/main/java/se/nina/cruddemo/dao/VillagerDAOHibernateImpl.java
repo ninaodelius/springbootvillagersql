@@ -69,7 +69,7 @@ public class VillagerDAOHibernateImpl implements VillagerDAO{
     @Override
     public void deleteById(int theId) {
 
-        //get the current hibernate sessino
+        //get the current hibernate session
         Session currentSession = entityManager.unwrap(Session.class);
 
         //delete object with primary key
