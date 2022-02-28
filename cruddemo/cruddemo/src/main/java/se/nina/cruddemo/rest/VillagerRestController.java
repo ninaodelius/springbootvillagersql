@@ -52,4 +52,30 @@ public class VillagerRestController {
         return  theVillager;
     }
 
+    // add mapping for put /villagers - update existing villager
+
+    @PutMapping("/villagers")
+    public Villager updateVillager(@RequestBody Villager theVillager) {
+
+        villagerService.save(theVillager);
+
+        return theVillager;
+    }
+
+    //add mapping for delete /villagers/{villagerId} - delete villager
+
+    @DeleteMapping("/villagers/{villagerId}")
+    public String deleteVillager(@PathVariable int villagerId) {
+        Villager tempVillager = villagerService.findById(villagerId);
+
+        //throw exception if null
+
+        if (tempVillager == null) {
+            throw new RuntimeException("Villager Id not found - " + villagerId);
+        }
+        villagerService.deleteById(villagerId);
+
+        return "Deleted villager Id - " + villagerId;
+    }
 }
+
