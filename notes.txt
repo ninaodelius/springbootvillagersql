@@ -1,0 +1,28 @@
+CREATE DATABASE  IF NOT EXISTS `stidb`;
+USE `stidb`;
+
+--
+-- Table structure for table `villager`
+--
+
+DROP TABLE IF EXISTS `villager`;
+
+CREATE TABLE `villager` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) DEFAULT NULL,
+  `personality` varchar(45) DEFAULT NULL,
+  `species` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+
+--
+-- Data for table `villager`
+--
+
+INSERT INTO `villager` VALUES
+	(1,'Julian','Smug','Horse'),
+	(2,'Gaston','Cranky','Rabbit'),
+	(3,'Sprinkle','Peppy','Penguin'),
+	(4,'Sprocket','Jock','Ostrich'),
+	(5,'Francine','Snooty','Rabbit');
+
