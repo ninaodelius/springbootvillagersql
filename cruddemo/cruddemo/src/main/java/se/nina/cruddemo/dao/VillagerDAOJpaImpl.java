@@ -1,4 +1,4 @@
-package se.nina.cruddemo.dao;
+/*package se.nina.cruddemo.dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -63,3 +63,4 @@ public class VillagerDAOJpaImpl  implements VillagerDAO{
 
     }
 }
+*/

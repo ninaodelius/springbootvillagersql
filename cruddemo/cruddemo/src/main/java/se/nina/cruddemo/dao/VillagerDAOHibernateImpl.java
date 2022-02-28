@@ -1,4 +1,4 @@
-package se.nina.cruddemo.dao;
+/*package se.nina.cruddemo.dao;
 
 import org.hibernate.Session;
 import org.hibernate.query.Query;
@@ -82,3 +82,4 @@ public class VillagerDAOHibernateImpl implements VillagerDAO{
         theQuery.executeUpdate();
     }
 }
+*/

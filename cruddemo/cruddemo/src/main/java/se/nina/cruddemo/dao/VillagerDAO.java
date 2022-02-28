@@ -1,4 +1,4 @@
-package se.nina.cruddemo.dao;
+/*package se.nina.cruddemo.dao;
 
 import se.nina.cruddemo.entity.Villager;
 
@@ -17,3 +17,4 @@ public interface VillagerDAO {
 
 
 }
+*/
