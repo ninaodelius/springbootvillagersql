@@ -1,6 +1,7 @@
 package se.nina.cruddemo.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import se.nina.cruddemo.dao.VillagerDAO;
@@ -13,7 +14,7 @@ public class VillagerServiceImpl implements VillagerService{
     private VillagerDAO villagerDAO;
 
     @Autowired
-    public VillagerServiceImpl(VillagerDAO theVillagerDAO) {
+    public VillagerServiceImpl(@Qualifier("villagerDAOJpaImpl") VillagerDAO theVillagerDAO) {
         villagerDAO = theVillagerDAO;
     }
 
