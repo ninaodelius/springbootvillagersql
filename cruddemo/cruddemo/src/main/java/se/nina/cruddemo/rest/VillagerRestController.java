@@ -3,7 +3,6 @@ package se.nina.cruddemo.rest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import se.nina.cruddemo.dao.VillagerDAO;
 import se.nina.cruddemo.entity.Villager;
 import se.nina.cruddemo.service.VillagerService;
 
